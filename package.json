@@ -1,7 +1,7 @@
 {
     "name": "elysium-launcher",
     "preductname": "Elysium Launcher",
-    "version": "1.0.1",
+    "version": "1.0.2.1",
     "description": "Launcher officiel de Elysium",
     "main": "src/app.js",
         "author": "AlouchiCC",
