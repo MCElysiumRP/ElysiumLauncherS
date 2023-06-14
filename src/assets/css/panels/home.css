@@ -5,8 +5,9 @@
     height: 70px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    background: #00000080;
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
+    backdrop-filter: blur(5px);
 }
 
 .player-head {
@@ -25,7 +26,7 @@
 
 .player-head:hover {
     border-radius: 5px;
-    transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
+    transform: scale(0.8);
 }
 
 .settings-btn {
@@ -41,11 +42,16 @@
 
 .settings-btn:hover {
     border-radius: 5px;
-    transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
+    transform: scale(0.8);
+}
+
+.settings-btn:hover .icon-settings:before {
+    color: red;
 }
 
 .icon-settings:before {
     font-size: 40px;
+    transition: color 0.5s cubic-bezier(1, 0.46, 0, 1.29);
 }
 
 .play-element {
@@ -59,16 +65,25 @@
 }
 
 .play-btn {
-    top: 10px;
+    display: inline-block;
+    background: #3994E8;
+    box-shadow: 0 0 5px #3994E8;
     width: 160px;
     height: 37px;
     border-radius: 20px;
-    border: none;
-    background: #00bd7a;
-    font: normal normal bold 20px/25px Poppins;
-    color: #121212;
     margin: 15px 0;
-    box-shadow: 0 0 5px #00bd7a;
+    top: 10px;
+    border: none;
+    font: normal normal bold 20px/25px Poppins;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 0 5px #3994E8;
+}
+
+.play-btn:hover {
+    background: #4690D4;
+    box-shadow: 0 0 5px #4690D4;
+    transform: scale(0.9);
 }
 
 .download-content {
@@ -98,7 +113,7 @@
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: #00bd7a;
+    background-color: #3994E8;
     border-radius: 10px;
 }
 
@@ -226,15 +241,16 @@
     position: relative;
     width: 100%;
     height: 75px;
-    background-color: #292929;
+    background-color: #29292985;
     border-radius: 10px;
-    transition: opacity 1s;
-    opacity: .4;
+    transition: ease-in-out 0.25s;
+    backdrop-filter: blur(3px);
+    min-width: 350px;
 }
 
 .server:hover {
-    transition: opacity 1s;
-    opacity: 1;
+    backdrop-filter: blur(7px);
+    background-color: #292929af
 }
 
 .server-img {
